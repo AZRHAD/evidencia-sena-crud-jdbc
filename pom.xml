@@ -57,6 +57,26 @@
                 </configuration>
             </plugin>
 
+            <!-- Plugin para copiar dependencias a target/lib para ejecucion portatil -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>copiar-dependencias</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- Plugin de ejecucion directa con Maven -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
