@@ -1,3 +1,7 @@
+# Herramientas locales portables
+tools/
+*.bat
+
 # Maven build output
 target/
 pom.xml.tag
